@@ -1,0 +1,17 @@
+ 
+<h1>wr3dmast3r lab</h1>
+
+
+<h2>List of csp configuration</h2>
+
+{% for i in csps %}
+<li>
+	{{i}}: {{csps[i]}}
+</li>
+{% endfor %}
+
+<br><br>
+<form id='form_flag' method="POST">
+    <input type="text" name="csp", placeholder="Enter some CSP" required>
+    <input type="submit" value="&nbsp;Send CSP&nbsp;">
+ </form>
