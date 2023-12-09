@@ -19,15 +19,18 @@ class MainPage:
         """
         Defines the type of main page
         """
+        
+        #---App Settings---
         page.title = APP_TITLE
-        page.update()
-
+        
+        #-----App body-----
 
     def run(self, view_mode: str = "browser"):
         """
         The function of launching the application
         """
         if view_mode == "browser":
-            ft.app(target=self.main_page, view=VIEW_MODE[view_mode], port=APP_PORT)
+            ft.app(target=self.main_page,
+                   view=VIEW_MODE[view_mode], port=APP_PORT)
         else:
             ft.app(target=self.main_page, view=VIEW_MODE[view_mode])
