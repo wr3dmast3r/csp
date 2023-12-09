@@ -2,8 +2,8 @@
 Main app start file
 """
 
-from app import MainPage
+from app import App
 
 if __name__ == "__main__":
-    app = MainPage()
-    app.run("browser")
+    app = App()
+    app.run("desktop")

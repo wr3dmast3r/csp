@@ -2,8 +2,8 @@
     App initialization file
 """
 
-from .main_page import MainPage
+from .app import App
 
 __all__ = (
-    "MainPage",
+    "App",
 )
