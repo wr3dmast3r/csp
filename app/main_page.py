@@ -3,7 +3,11 @@ Main page file
 """
 
 import flet as ft
-from config import VIEW_MODE
+from config import (
+    VIEW_MODE,
+    APP_TITLE,
+    APP_PORT
+)
 
 
 class MainPage:
@@ -15,36 +19,15 @@ class MainPage:
         """
         Defines the type of main page
         """
+        page.title = APP_TITLE
+        page.update()
 
-        page.title = "Piercier CSP"
-        page.vertical_alignment = ft.MainAxisAlignment.CENTER
-
-        txt_number = ft.TextField(
-            value="0", text_align=ft.TextAlign.RIGHT, width=100)
-
-        def minus_click(e):
-            print(e)
-            txt_number.value = str(int(txt_number.value) - 1)
-            page.update()
-
-        def plus_click(e):
-            print(e)
-            txt_number.value = str(int(txt_number.value) + 1)
-            page.update()
-
-        page.add(
-            ft.Row(
-                [
-                    ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
-                    txt_number,
-                    ft.IconButton(ft.icons.ADD, on_click=plus_click),
-                ],
-                alignment=ft.MainAxisAlignment.CENTER,
-            )
-        )
 
     def run(self, view_mode: str = "browser"):
         """
         The function of launching the application
         """
-        ft.app(target=self.main_page, view=VIEW_MODE[view_mode])
+        if view_mode == "browser":
+            ft.app(target=self.main_page, view=VIEW_MODE[view_mode], port=APP_PORT)
+        else:
+            ft.app(target=self.main_page, view=VIEW_MODE[view_mode])

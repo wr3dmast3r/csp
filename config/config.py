@@ -8,3 +8,5 @@ VIEW_MODE = {
 }
 
 APP_TITLE = "Piercier CSP"
+
+APP_PORT = 8000
